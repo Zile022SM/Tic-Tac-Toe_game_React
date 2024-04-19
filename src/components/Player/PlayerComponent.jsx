@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useState } from 'react';
 
-function PlayerComponent({name,symbol}) {
+function PlayerComponent({name,symbol,isActive}) {
 
   const [updatedName, setUpdatedName] = useState(name);
   const [isEditing, setIsEditing] = useState(false);
@@ -28,7 +28,7 @@ function PlayerComponent({name,symbol}) {
 
   return (
      
-    <li>
+    <li className={isActive ? 'active' : ''}>
           <span className='player'>
             {playerName}
             <span className='player-symbol'>{symbol}</span>
